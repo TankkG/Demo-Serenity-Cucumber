@@ -25,42 +25,59 @@ Automation framework for testing [Swag Labs](https://www.saucedemo.com/) demo e-
 - Serenity's enhanced reporting capabilities
 
 ## Technology Stack
-| Component       | Version |
+| Component      | Version |
 |----------------|---------|
 | Serenity BDD   | 4.2.22  |
 | Cucumber       | 7.17.0  |
 | JUnit          | 4.13.2  |
-| Java           | 23      |
+| Java           | 25      |
 | Maven          | 3.9+    |
 
 ## Setup Instructions
 
 ### Prerequisites
-1. Install JDK 23
-2. Install Maven 3.9+
+1. Install JDK 25
+
+```
+choco install openjdk --version=25.0.0 -y
+```
+
+2. Install Maven 3.9.0
+
+```
+choco install maven --version=3.9.9 -y
+```
+
 3. Install Git
 
 ### Installation
 ```bash
 git clone <repository-url>
-cd SwageDemo
 mvn clean install
 ```
 
-Running Tests
-Run all tests
+### Running Tests
 
+Run all tests:
+```
 mvn clean verify
+```
 
-Run with specific browser
+Run with specific browser:
+```
 mvn clean verify -Dwebdriver.driver=firefox
+```
 
-Run specific feature
-mvn clean verify -Dcucumber.filter.tags="@login"
+Run specific feature (Powershell):
+```
+mvn clean verify '-Dcucumber.filter.tags=@Login'
+```
 
-Reporting
+### Reporting
 Serenity generates rich interactive reports located at:
+```
 target/site/serenity/index.html
+```
 
 Sample report includes:
 

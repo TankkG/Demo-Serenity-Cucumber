@@ -61,9 +61,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.5.3</version>
                 <configuration>
-                    <includes>
-                        <include>**/Runner*.java</include>
-                    </includes>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <plugin>
@@ -72,7 +70,7 @@
                 <version>3.5.3</version>
             <configuration>
                 <includes>
-                    <include>**/test/**/*.java</include>
+                    <include>**/Runner*.java</include>
                 </includes>
                 <systemPropertyVariables>
                     <surefire.security.anager>
